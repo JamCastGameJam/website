@@ -5,7 +5,7 @@
 
 body {
 	background-color: #2d3438;
-	background-image: url('images/jcimage2.png');
+	background-image: url('images/jcimage3.png');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
@@ -20,24 +20,26 @@ body {
 /* Header styling */
 header {
 	backdrop-filter: blur(20px);
-	background-color: rgba(0.3, 0.3, 0.3, 0.5);
+	background-color: #5f6e83;//rgba(0.3, 0.3, 0.3, 0.5);
 	color: white;
 	padding: 20px 8px;
 	border-radius: 8px;
 	text-align: center;
 	//box-shadow: 0 0px 10px 10px rgba(0.1,0.1,0.1,0.3);
-	border: 2px solid black;
+	border: 1px solid black;
+	opacity: 0.90;
 }
 
 nav {
 	backdrop-filter: blur(20px);
-	background-color: rgba(0.3, 0.3, 0.3, 0.5);
+	background-color: #5f6e83;//rgba(0.3, 0.3, 0.3, 0.5);
 	color: white;
 	padding: 20px 8px;
 	border-radius: 8px;
 	text-align: left;
 	//box-shadow: 0 0px 10px 10px rgba(0.1,0.1,0.1,0.3);
-	border: 2px solid black;
+	border: 1px solid black;
+	opacity: 0.90;
 }
 
 nav a {
@@ -123,13 +125,14 @@ main {
 
 section {
 	backdrop-filter: blur(20px);
-	background-color: rgba(0.3, 0.3, 0.3, 0.5);
+	background-color: #5f6e83;//rgba(0.3, 0.3, 0.3, 0.5);
 	color: white;
 	margin-bottom: 20px;
 	padding: 10px;
 	border-radius: 8px;
 	//box-shadow: 0 0px 10px 10px rgba(0.1,0.1,0.1,0.3);
-	border: 2px solid black;
+	border: 1px solid black;
+	opacity: 0.90;
 }
 
 .highlight {
