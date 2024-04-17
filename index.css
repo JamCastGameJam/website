@@ -116,6 +116,7 @@ nav a {
 
 .cta-btn:hover {
 	background-color: #9b5de5;//#7785cc;
+	box-shadow: 0px 0px 5px white;
 }
 
 /* Main section styling */
