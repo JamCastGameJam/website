@@ -7,6 +7,66 @@
 		<title>Jamcast</title>
 		<link rel="stylesheet" href="index.css">
 
+		<script>
+			function countdown() {
+				const startDate = Date.parse("19 April 2024 00:00:00 EST") - (60 * 60 * 1000); // new Date().getTime() + (5 * 1000);
+				//console.log(startDate.getTime());
+				const endDate = Date.parse("27 April 2024 00:00:00 EST") - (60 * 60 * 1000); // new Date().getTime() + (10 * 1000);
+				const timer = setInterval(function() {
+					const now = new Date().getTime();
+					//console.log(now);
+					
+					if (now > endDate) {
+						document.getElementById('jam_time_status').innerHTML = "The game jam is over!";
+						document.getElementById('days').innerText = "X";
+						document.getElementById('hours').innerText = "X";
+						document.getElementById('minutes').innerText = "X";
+						document.getElementById('seconds').innerText = "X";
+					} else if (now < startDate) {
+						document.getElementById('jam_time_status').innerHTML = "The game jam starts in:";
+						const difference = startDate - now;
+						//console.log(difference);
+						// Time calculations for days, hours, minutes, and seconds
+						const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+						const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+						const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+						const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+		
+						// Output the result in the elements with id="days", "hours", "minutes", "seconds"
+						document.getElementById('days').innerText = days;
+						document.getElementById('hours').innerText = hours;
+						document.getElementById('minutes').innerText = minutes;
+						document.getElementById('seconds').innerText = seconds;
+					} else {
+						document.getElementById('jam_time_status').innerHTML = "Time left in game jam!";
+						const difference = endDate - now;
+						//console.log([now, endDate, difference]);
+						// Time calculations for days, hours, minutes, and seconds
+						const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+						const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+						const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+						const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+		
+						// Output the result in the elements with id="days", "hours", "minutes", "seconds"
+						document.getElementById('days').innerText = days;
+						document.getElementById('hours').innerText = hours;
+						document.getElementById('minutes').innerText = minutes;
+						document.getElementById('seconds').innerText = seconds;
+					}
+	
+	/*
+					// If the countdown is over, write some text 
+					if (difference < 0) {
+						clearInterval(timer);
+						document.getElementById('countdown').innerHTML = "<h1>Countdown Finished!</h1>";
+					}
+	*/
+				}, 1000);
+			}
+	
+			window.onload = countdown;
+		</script>
+
 	</head>
 	<body>
 		<!--
@@ -23,6 +83,17 @@
 				<h1>Welcome to the Jamcast Game Jam!</h1>
 				<p>Unleash Your Creativity!</p>
 				<a href="https://discord.gg/x5ySmrWTrk" class="cta-btn" aria-label="Join the Jamcast Game Jam now">Join Discord Now!</a>
+			</div>
+			<div class="countdown-container">
+				<h1 id="jam_time_status" class="header-content"></h1>
+				<div id="countdown">
+					<ul>
+						<li><span id="days">X</span>days</li>
+						<li><span id="hours">X</span>Hours</li>
+						<li><span id="minutes">X</span>Minutes</li>
+						<li><span id="seconds">X</span>Seconds</li>
+					</ul>
+				</div>
 			</div>
 		</header>
 		<main>
