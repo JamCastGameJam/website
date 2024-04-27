@@ -8,11 +8,11 @@
 		<link rel="stylesheet" href="index.css">
 
 		<script>
-			function countdown() {
+			function start_countdown() {
 				const startDate = Date.parse("19 April 2024 00:00:00 EST") - (60 * 60 * 1000); // new Date().getTime() + (5 * 1000);
 				//console.log(startDate.getTime());
 				const endDate = Date.parse("04 May 2024 00:00:00 EST") - (60 * 60 * 1000); // new Date().getTime() + (10 * 1000);
-				const timer = setInterval(function() {
+				const update = function() {
 					const now = new Date().getTime();
 					//console.log(now);
 					
@@ -54,11 +54,14 @@
 						document.getElementById('seconds').innerText = seconds;
 					}
 
-				}, 1000);
+				};
+
+				update();
+				const timer = setInterval(update, 1000);
 			}
 
 			document.addEventListener("DOMContentLoaded", function() {
-				countdown();
+				start_countdown();
 			});
 		</script>
 
