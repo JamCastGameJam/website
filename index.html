@@ -63,8 +63,10 @@
 	*/
 				}, 1000);
 			}
-	
-			window.onload = countdown;
+
+			document.addEventListener("DOMContentLoaded", function() {
+				countdown();
+			});
 		</script>
 
 	</head>
